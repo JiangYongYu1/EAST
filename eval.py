@@ -6,7 +6,6 @@ import numpy as np
 import tensorflow as tf
 
 import locality_aware_nms as nms_locality
-import lanms
 
 tf.app.flags.DEFINE_string('test_data_path', '/tmp/ch4_test_images/images/', '')
 tf.app.flags.DEFINE_string('gpu_list', '0', '')

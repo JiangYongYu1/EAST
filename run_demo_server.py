@@ -15,7 +15,6 @@ import collections
 import tensorflow as tf
 import model
 from icdar import restore_rectangle
-import lanms
 from eval import resize_image, sort_poly, detect
 
 
