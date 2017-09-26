@@ -91,7 +91,6 @@ def detect(score_map, geo_map, timer, score_map_thresh=0.8, box_thresh=0.1, nms_
     boxes[:, :8] = text_box_restored.reshape((-1, 8))
     boxes[:, 8] = score_map[xy_text[:, 0], xy_text[:, 1]]
     timer['restore'] = time.time() - start
-    print "asdadadASDasdsad"
     # nms part
     start = time.time()
     boxes = nms_locality.nms_locality(boxes.astype(np.float64), nms_thres)
