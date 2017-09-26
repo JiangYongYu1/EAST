@@ -1,5 +1,7 @@
 # EAST: An Efficient and Accurate Scene Text Detector
 
+### This version is a PY2 compatible fork of [original  EAST repo](https://github.com/argman/EAST) and without C++ NMS.  
+
 ### Introduction
 This is a tensorflow re-implementation of [EAST: An Efficient and Accurate Scene Text Detector](https://arxiv.org/abs/1704.03155v2).
 The features are summarized blow:
