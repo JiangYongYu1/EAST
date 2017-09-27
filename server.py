@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import os
+import os,sys
 
 import time
 import datetime
@@ -169,7 +169,7 @@ def save_result(img, rst):
 
 
 
-checkpoint_path = './east_icdar2015_resnet_v1_50_rbox'
+checkpoint_path = '~/Dropbox/DeepVideoAnalytics/shared/east/' if sys.platform == 'darwin' else '/root/model/'
 
 
 @app.route('/', methods=['POST'])
