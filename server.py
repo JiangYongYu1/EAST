@@ -8,20 +8,19 @@ import cv2
 import numpy as np
 import uuid
 import json
-
-import functools
 import logging
 import collections
 import tensorflow as tf
-import model
-from icdar import restore_rectangle
-from eval import resize_image, sort_poly, detect
+from east import model
+from east.icdar import restore_rectangle
+from east.eval import resize_image, sort_poly, detect
 
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 sess, f_score, f_geometry, input_images, global_step = None, None, None, None, None
+
 def get_predictor(checkpoint_path):
     logger.info('loading model')
     input_images = tf.placeholder(tf.float32, shape=[None, None, None, 3], name='input_images')
@@ -36,7 +35,6 @@ def get_predictor(checkpoint_path):
     model_path = os.path.join(checkpoint_path, os.path.basename(ckpt_state.model_checkpoint_path))
     logger.info('Restore from {}'.format(model_path))
     saver.restore(sess, model_path)
-    loaded = True
     return sess, f_score, f_geometry, input_images, global_step
 
 def predictor(img):
