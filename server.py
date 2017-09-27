@@ -169,7 +169,7 @@ def save_result(img, rst):
 
 
 
-checkpoint_path = '~/Dropbox/DeepVideoAnalytics/shared/east/' if sys.platform == 'darwin' else '/root/model/'
+checkpoint_path = '/Users/aub3/Dropbox/DeepVideoAnalytics/shared/east/' if sys.platform == 'darwin' else '/root/model/'
 
 
 @app.route('/', methods=['POST'])
