@@ -13,11 +13,12 @@ RUN pip install --upgrade cffi
 RUN pip install -r requirements.txt
 VOLUME ["/root/EAST/static/results"]
 EXPOSE 8769
-RUN rm -rf "root/model" && mkdir "/root/model/"
+RUN rm -rf "/root/model" && mkdir "/root/model/"
 WORKDIR "/root/model"
 RUN wget https://www.dropbox.com/s/z23vrvndtlpv2n1/checkpoint -O /root/model/checkpoint
 RUN wget https://www.dropbox.com/s/zro5lexhb7ai17w/model.ckpt-49491.index -O /root/model/model.ckpt-49491.index
 RUN wget https://www.dropbox.com/s/3cvu7oaw6ostgky/model.ckpt-49491.data-00000-of-00001 -O /root/model/model.ckpt-49491.data-00000-of-00001
 RUN wget https://www.dropbox.com/s/h3d1wgpuwtnksyo/model.ckpt-49491.meta -O /root/model/model.ckpt-49491.meta
+WORKDIR "/root/EAST"
 CMD ["python","server.py"]
 
